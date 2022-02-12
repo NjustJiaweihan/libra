@@ -2,6 +2,7 @@ package com.dream.libra.log;
 
 import com.dream.libra.exception.BizException;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author hanjiawei004@ke.com
@@ -15,7 +16,7 @@ public class LibraLog {
         this.logger = logger;
     }
 
-    public LibraLog getInstance(Logger logger){
+    public static LibraLog getInstance(Logger logger){
         return new LibraLog(logger);
     }
 
