@@ -8,6 +8,8 @@
         <module>libra-application</module>
         <module>libra-test</module>
         <module>libra-api</module>
+        <module>libra-domain</module>
+        <module>libra-common</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

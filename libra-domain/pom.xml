@@ -9,13 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>libra-application</artifactId>
+    <artifactId>libra-domain</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.dream</groupId>
-            <artifactId>libra-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
+
 </project>
