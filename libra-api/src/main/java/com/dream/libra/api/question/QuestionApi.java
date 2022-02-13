@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/question")
 public interface QuestionApi {
 
-    @PostMapping("/get")
+    @PostMapping(value = "/get")
     Response<QuestionInfoDTO> get(@RequestBody QuestionQuery query);
 }

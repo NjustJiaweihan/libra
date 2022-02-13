@@ -1,7 +1,10 @@
 package com.dream.libra.response;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
+@Data
 public class Response<T> implements Serializable {
 
     private static final Long SUCCESS_CODE = 0L;
