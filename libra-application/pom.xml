@@ -17,5 +17,12 @@
             <artifactId>libra-api</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.dream</groupId>
+            <artifactId>libra-domain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+
 </project>

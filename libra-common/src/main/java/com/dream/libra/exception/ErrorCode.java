@@ -2,7 +2,9 @@ package com.dream.libra.exception;
 
 public enum ErrorCode {
 
-    SERVICE_ERROR(1L, "service error");
+    SERVICE_ERROR(1L, "service error"),
+    QUESTION_NOT_EXIST(6000001L, "题目不存在"),
+    ;
 
     public final Long code;
     public final String msg;
