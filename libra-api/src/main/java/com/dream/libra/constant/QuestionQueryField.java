@@ -13,8 +13,4 @@ public enum QuestionQueryField {
         this.fieldName  = fieldName;
         this.desc = desc;
     }
-
-    public String getFieldName() {
-        return fieldName;
-    }
 }

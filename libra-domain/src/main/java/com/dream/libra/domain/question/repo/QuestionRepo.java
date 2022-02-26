@@ -1,13 +1,9 @@
 package com.dream.libra.domain.question.repo;
 
 import com.dream.libra.po.Question;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
-/**
- * @author hanjiawei004@ke.com
- * @summary
- */
-@Repository
+@Component
 public class QuestionRepo {
 
     public Question get(Long questionId){

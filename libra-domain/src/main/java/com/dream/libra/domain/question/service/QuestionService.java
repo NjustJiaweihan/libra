@@ -1,6 +1,9 @@
 package com.dream.libra.domain.question.service;
 
 import com.dream.libra.constant.QuestionQueryField;
+import com.dream.libra.domain.question.assembler.QuestionAssembler;
+import com.dream.libra.domain.question.repo.QuestionOptionRepo;
+import com.dream.libra.domain.question.repo.QuestionPropertyRepo;
 import com.dream.libra.domain.question.repo.QuestionRepo;
 import com.dream.libra.dto.QuestionInfoDTO;
 import com.dream.libra.exception.ErrorCode;
@@ -21,20 +24,25 @@ public class QuestionService {
     @Autowired
     private QuestionRepo questionRepo;
 
+    @Autowired
+    private QuestionOptionRepo questionOptionRepo;
+
+    @Autowired
+    private QuestionPropertyRepo questionPropertyRepo;
+
     public QuestionInfoDTO get(QuestionQuery query){
         QuestionInfoDTO questionInfoDTO = new QuestionInfoDTO();
-        Question question = getOrThrow(query.getQuestionId());
-        // todo
-        questionInfoDTO.setQuestion(/* question */ null);
+        questionInfoDTO.setQuestion(QuestionAssembler.assembleQuestionDTO(getOrThrow(query.getQuestionId())));
 
+        // todo 异步方式 mono.zip和feature
         // 题目选项
         if(Boolean.TRUE.equals(query.getFields().contains(QuestionQueryField.OPTION.fieldName))){
-
+            questionOptionRepo.get(query.getQuestionId());
         }
 
         // 题目属性
         if(Boolean.TRUE.equals(query.getFields().contains(QuestionQueryField.PROPERTY.fieldName))){
-
+            questionPropertyRepo.get(query.getQuestionId());
         }
 
         return questionInfoDTO;
