@@ -13,6 +13,6 @@ public class NullQuestion extends Question {
     }
 
     public String getStem(){
-        return "";
+        return "默认题干";
     }
 }
