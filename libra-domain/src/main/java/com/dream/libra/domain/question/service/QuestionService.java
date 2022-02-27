@@ -1,7 +1,9 @@
 package com.dream.libra.domain.question.service;
 
 import com.dream.libra.constant.QuestionQueryField;
+import com.dream.libra.constant.QuestionType;
 import com.dream.libra.domain.question.assembler.QuestionAssembler;
+import com.dream.libra.domain.question.entity.QuestionEntity;
 import com.dream.libra.domain.question.repo.QuestionOptionRepo;
 import com.dream.libra.domain.question.repo.QuestionPropertyRepo;
 import com.dream.libra.domain.question.repo.QuestionRepo;
@@ -14,7 +16,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Objects;
+import java.util.List;
 
 @Service
 public class QuestionService {
@@ -29,6 +31,9 @@ public class QuestionService {
 
     @Autowired
     private QuestionPropertyRepo questionPropertyRepo;
+
+    @Autowired
+    private List<AbstractQuestionService> questionHandlers;
 
     public QuestionInfoDTO get(QuestionQuery query){
         QuestionInfoDTO questionInfoDTO = new QuestionInfoDTO();
@@ -48,9 +53,21 @@ public class QuestionService {
         return questionInfoDTO;
     }
 
+    public void validate(QuestionEntity question){
+        if(! QuestionType.contain(question.getQuestion().getQuestionType())){
+            logger.error("题目类型错误 question:{}", question)
+                    .thenThrow(ErrorCode.SERVICE_ERROR.createException());
+        }
+        for (AbstractQuestionService questionHandler : questionHandlers) {
+            if(questionHandler.support(question.getQuestion().getQuestionType())){
+                questionHandler.validate(question);
+            }
+        }
+    }
+
     private Question getOrThrow(Long questionId){
         Question question = questionRepo.get(questionId);
-        if(Objects.isNull(question)){
+        if(question.isNull()){
             logger.error("题目不存在 questionId:{}", questionId)
                   .thenThrow(ErrorCode.QUESTION_NOT_EXIST.createException());
         }

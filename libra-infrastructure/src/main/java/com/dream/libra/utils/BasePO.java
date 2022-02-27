@@ -1,4 +1,4 @@
-package com.dream.libra.po;
+package com.dream.libra.utils;
 
 import lombok.Data;
 

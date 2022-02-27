@@ -1,17 +1,19 @@
 package com.dream.libra.po;
 
+import com.dream.libra.utils.BasePO;
+import com.dream.libra.utils.Null;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class Question extends BasePO{
+public class Question extends BasePO implements Null {
 
     private Long questionId;
 
-    private Byte question_type;
+    private Byte questionType;
 
-    private Byte question_state;
+    private Byte questionState;
 
     private String stem;
 
@@ -22,4 +24,8 @@ public class Question extends BasePO{
     private Long parent;
 
     private Integer version;
+
+    public boolean isNull(){
+        return false;
+    }
 }

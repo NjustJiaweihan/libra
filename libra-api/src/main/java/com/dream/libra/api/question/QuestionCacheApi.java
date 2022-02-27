@@ -9,18 +9,20 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 import java.util.List;
 
-@Api("QuestionApi")
-public interface QuestionApi {
+@Api("QuestionCacheApi")
+@RequestMapping("/cache")
+public interface QuestionCacheApi {
 
     @ApiImplicitParams({
             @ApiImplicitParam(name = "query", value = "query", required = true, dataType = "QuestionQuery", paramType = "body")
     })
     @PostMapping(value = "/question")
-    Response<QuestionInfoDTO> get(@RequestBody QuestionQuery query);
+    Response<QuestionInfoDTO> get(@RequestBody @Valid QuestionQuery query);
 
     @ApiImplicitParams({
             @ApiImplicitParam(name = "query", value = "query", required = true, dataType = "QuestionListQuery", paramType = "body")

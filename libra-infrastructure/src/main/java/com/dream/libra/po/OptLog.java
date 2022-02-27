@@ -1,5 +1,6 @@
 package com.dream.libra.po;
 
+import com.dream.libra.utils.BasePO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -7,7 +8,7 @@ import java.util.Date;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class OptLog extends BasePO{
+public class OptLog extends BasePO {
 
     private String optUser;
 

@@ -8,10 +8,12 @@ import lombok.EqualsAndHashCode;
 @Data
 public class NullQuestion extends Question {
 
+    @Override
     public boolean isNull(){
         return true;
     }
 
+    @Override
     public String getStem(){
         return "默认题干";
     }
