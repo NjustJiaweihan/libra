@@ -1,6 +1,6 @@
 package com.dream.libra.domain.question.service;
 
-import com.dream.libra.constant.QuestionType;
+import com.dream.libra.enums.QuestionType;
 import com.dream.libra.domain.question.entity.QuestionEntity;
 import com.dream.libra.po.QuestionOption;
 import com.dream.libra.po.QuestionProperty;

@@ -1,4 +1,4 @@
-package com.dream.libra.constant;
+package com.dream.libra.enums;
 
 public enum QuestionQueryField {
 

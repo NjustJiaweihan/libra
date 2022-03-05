@@ -1,14 +1,14 @@
 package com.dream.libra.domain.question.service;
 
-import com.dream.libra.constant.QuestionQueryField;
-import com.dream.libra.constant.QuestionType;
+import com.dream.libra.enums.QuestionQueryField;
+import com.dream.libra.enums.QuestionType;
 import com.dream.libra.domain.question.assembler.QuestionAssembler;
 import com.dream.libra.domain.question.entity.QuestionEntity;
 import com.dream.libra.domain.question.repo.QuestionOptionRepo;
 import com.dream.libra.domain.question.repo.QuestionPropertyRepo;
 import com.dream.libra.domain.question.repo.QuestionRepo;
 import com.dream.libra.dto.QuestionInfoDTO;
-import com.dream.libra.exception.ErrorCode;
+import com.dream.libra.constant.ErrorCode;
 import com.dream.libra.log.LibraLog;
 import com.dream.libra.po.Question;
 import com.dream.libra.query.QuestionQuery;

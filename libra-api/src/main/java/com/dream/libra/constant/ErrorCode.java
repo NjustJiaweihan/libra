@@ -1,4 +1,6 @@
-package com.dream.libra.exception;
+package com.dream.libra.constant;
+
+import com.dream.libra.exception.BizException;
 
 public enum ErrorCode {
 

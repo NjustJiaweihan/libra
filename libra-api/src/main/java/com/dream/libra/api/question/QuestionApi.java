@@ -20,7 +20,7 @@ public interface QuestionApi {
             @ApiImplicitParam(name = "query", value = "query", required = true, dataType = "QuestionQuery", paramType = "body")
     })
     @PostMapping(value = "/question")
-    Response<QuestionInfoDTO> get(@RequestBody QuestionQuery query);
+    Response<QuestionInfoDTO> get(@RequestBody @Valid QuestionQuery query);
 
     @ApiImplicitParams({
             @ApiImplicitParam(name = "query", value = "query", required = true, dataType = "QuestionListQuery", paramType = "body")

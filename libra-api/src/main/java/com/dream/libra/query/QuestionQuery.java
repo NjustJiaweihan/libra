@@ -1,5 +1,6 @@
 package com.dream.libra.query;
 
+import com.dream.libra.enums.QuestionQueryField;
 import com.sun.istack.internal.NotNull;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -15,7 +16,7 @@ public class QuestionQuery implements Serializable {
     private Long questionId;
 
     /**
-     * @see com.dream.libra.constant.QuestionQueryField
+     * @see QuestionQueryField
      */
     @NotNull
     @ApiModelProperty("题目附属信息可选值")

@@ -2,12 +2,8 @@ package com.dream.libra.log;
 
 import com.dream.libra.exception.BizException;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-/**
- * @author hanjiawei004@ke.com
- * @summary
- */
+
 public class LibraLog {
 
     private final Logger logger;
