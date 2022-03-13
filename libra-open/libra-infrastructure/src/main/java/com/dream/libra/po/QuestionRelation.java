@@ -5,17 +5,17 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class QuestionOption {
+public class QuestionRelation {
 
     private Long id;
 
     private Integer questionId;
 
-    private String option;
+    private Integer relationId;
 
-    private Byte right;
+    private Byte relationType;
 
-    private Character symbol;
+    private Integer relationValue;
 
     private Date ctime;
 

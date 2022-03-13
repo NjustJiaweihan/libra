@@ -3,7 +3,7 @@ package com.dream.libra.domain.question.service;
 import com.dream.libra.enums.QuestionType;
 import com.dream.libra.domain.question.entity.QuestionEntity;
 import com.dream.libra.po.QuestionOption;
-import com.dream.libra.po.QuestionProperty;
+import com.dream.libra.po.QuestionRelation;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -27,6 +27,6 @@ public class SingleQuestionHandler extends AbstractQuestionService{
         }
 
         // 校验属性
-        List<QuestionProperty> propertyList = question.getPropertyList();
+        List<QuestionRelation> propertyList = question.getPropertyList();
     }
 }

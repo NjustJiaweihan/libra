@@ -2,7 +2,7 @@ package com.dream.libra.domain.question.entity;
 
 import com.dream.libra.po.Question;
 import com.dream.libra.po.QuestionOption;
-import com.dream.libra.po.QuestionProperty;
+import com.dream.libra.po.QuestionRelation;
 import lombok.Data;
 
 import java.util.List;
@@ -14,5 +14,5 @@ public class QuestionEntity {
 
     private List<QuestionOption> optionList;
 
-    private List<QuestionProperty> propertyList;
+    private List<QuestionRelation> propertyList;
 }
