@@ -1,11 +1,11 @@
 package com.dream.libra.query;
 
 import com.dream.libra.enums.QuestionQueryField;
-import com.sun.istack.internal.NotNull;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Data
