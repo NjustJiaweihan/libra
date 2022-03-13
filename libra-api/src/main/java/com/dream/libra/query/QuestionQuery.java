@@ -13,7 +13,7 @@ public class QuestionQuery implements Serializable {
 
     @NotNull
     @ApiModelProperty("题目id")
-    private Long questionId;
+    private Integer questionId;
 
     /**
      * @see QuestionQueryField

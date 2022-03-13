@@ -1,12 +1,12 @@
-package com.dream.libra.domain.question.repo;
+package com.dream.libra.repo;
 
 import com.dream.libra.po.QuestionRelation;
 import org.springframework.stereotype.Component;
 
 @Component
-public class QuestionPropertyRepo {
+public class QuestionRelationRepo {
 
-    public QuestionRelation get(Long questionId){
+    public QuestionRelation get(Integer questionId){
         return null;
     }
 }

@@ -5,3 +5,11 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
+
+#datasource
+  datasource:
+    name: masterDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.0.105:3306/libra
+    username: root
+    password: 12345

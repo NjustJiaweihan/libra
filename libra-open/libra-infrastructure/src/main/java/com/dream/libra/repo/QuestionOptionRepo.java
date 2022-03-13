@@ -1,4 +1,4 @@
-package com.dream.libra.domain.question.repo;
+package com.dream.libra.repo;
 
 import com.dream.libra.po.QuestionOption;
 import org.springframework.stereotype.Component;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class QuestionOptionRepo {
 
-    public QuestionOption get(Long questionId){
+    public QuestionOption get(Integer questionId){
         return null;
     }
 }
