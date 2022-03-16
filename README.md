@@ -4,6 +4,19 @@
 
 看《重构》看得热血沸腾，找个老项目练练手。
 
+## How To Start
+- 修改`application.yaml`
+```
+mybatis:
+  datasource:
+    name: masterDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://<your ip>:3306/libra
+    username: <your username>
+    password: <your password>
+```
+- 启动项目，浏览器访问`http://localhost:8080/swagger-ui.html`
+
 ## 更新日志
 
 > 2022.02.12
