@@ -20,9 +20,9 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
-public class QuestionService {
+public class QuestionCoreService {
 
-    private final LibraLog logger = LibraLog.getInstance(LoggerFactory.getLogger(QuestionService.class));
+    private final LibraLog logger = LibraLog.getInstance(LoggerFactory.getLogger(QuestionCoreService.class));
 
     @Autowired
     private QuestionRepo questionRepo;

@@ -7,6 +7,7 @@ public class QuestionAssembler {
 
     public static QuestionDTO assembleQuestionDTO(Question question){
         QuestionDTO target = new QuestionDTO();
+
         target.setQuestionId(question.getQuestionId());
         return target;
     }

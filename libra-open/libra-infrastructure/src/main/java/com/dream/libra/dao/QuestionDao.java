@@ -4,8 +4,9 @@ import com.dream.libra.po.Question;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface QuestionMapper {
+public interface QuestionDao {
 
     Question get(Integer questionId);
 
+    int insert(Question question);
 }

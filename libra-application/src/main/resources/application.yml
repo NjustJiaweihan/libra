@@ -10,6 +10,11 @@ spring:
   datasource:
     name: masterDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.0.105:3306/libra
+    url: jdbc:mysql://192.168.0.104:3306/libra
     username: root
     password: 12345
+
+mybatis:
+  mapper-locations: com.dream.libra.mapper/*.xml
+  configuration:
+      map-underscore-to-camel-case : true
