@@ -5,6 +5,19 @@
 看《重构》看得热血沸腾，找个老项目练练手。
 
 ## How To Start
+
+```
+# docker-mysql
+$ docker pull mysql
+$ docker run -itd --name mysql-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql
+
+# docker-redis
+$ docker pull redis
+$ docker run -itd --name redis-test -p 6379:6379 redis
+
+# docker-elasticsearch
+$ docker pull elasticsearch:5.6.4
+```
 - 修改`application.yaml`
 ```
 mybatis:
@@ -14,6 +27,10 @@ mybatis:
     url: jdbc:mysql://<your ip>:3306/libra
     username: <your username>
     password: <your password>
+
+redis:
+  database: 0
+    host: <your ip>
 ```
 - 启动项目，浏览器访问`http://localhost:8080/swagger-ui.html`
 
