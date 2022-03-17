@@ -1,11 +1,15 @@
 package com.dream.libra.po;
 
+import java.io.Serializable;
+import java.util.Date;
 import lombok.Data;
 
-import java.util.Date;
-
+/**
+ * @author 
+ * 
+ */
 @Data
-public class QuestionRelation {
+public class QuestionRelation implements Serializable {
 
     private Long id;
 
@@ -15,11 +19,13 @@ public class QuestionRelation {
 
     private Byte relationType;
 
-    private Integer relationValue;
+    private String relationValue;
 
     private Date ctime;
 
     private Date mtime;
 
     private Byte deleted;
+
+    private static final long serialVersionUID = 1L;
 }

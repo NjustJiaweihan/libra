@@ -1,25 +1,27 @@
 package com.dream.libra.po;
 
+import java.io.Serializable;
+import java.util.Date;
 import lombok.Data;
 
-import java.util.Date;
-
 @Data
-public class QuestionOptLog {
+public class QuestionOptLog implements Serializable {
 
     private Long id;
 
-    private int questionId;
+    private Integer questionId;
 
-    private String optUser;
+    private Byte optType;
 
     private String optContent;
 
-    private String optType;
+    private String optUser;
 
     private Date optTime;
 
     private Date ctime;
 
     private Date mtime;
+
+    private static final long serialVersionUID = 1L;
 }

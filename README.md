@@ -6,6 +6,8 @@
 
 ## How To Start
 
+### 环境
+推荐在docker中搭建基建。
 ```
 # docker-mysql
 $ docker pull mysql
@@ -18,18 +20,15 @@ $ docker run -itd --name redis-test -p 6379:6379 redis
 # docker-elasticsearch
 $ docker pull elasticsearch:5.6.4
 ```
+
+### 配置
 - 修改`application.yaml`
 ```
 mybatis:
   datasource:
-    name: masterDataSource
-    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://<your ip>:3306/libra
-    username: <your username>
-    password: <your password>
 
 redis:
-  database: 0
     host: <your ip>
 ```
 - 启动项目，浏览器访问`http://localhost:8080/swagger-ui.html`
