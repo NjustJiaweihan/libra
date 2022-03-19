@@ -1,8 +1,8 @@
 package com.dream.libra.domain.question.service;
 
 import com.dream.libra.constant.ErrorCode;
-import com.dream.libra.domain.question.assembler.QuestionAssembler;
 import com.dream.libra.domain.question.entity.QuestionEntity;
+import com.dream.libra.domain.question.utils.QuestionUtils;
 import com.dream.libra.dto.QuestionInfoDTO;
 import com.dream.libra.enums.QuestionQueryField;
 import com.dream.libra.enums.QuestionType;
@@ -38,7 +38,7 @@ public class QuestionCoreService {
 
     public QuestionInfoDTO get(QuestionQuery query){
         QuestionInfoDTO questionInfoDTO = new QuestionInfoDTO();
-        questionInfoDTO.setQuestion(QuestionAssembler.assembleQuestionDTO(getOrThrow(query.getQuestionId())));
+        questionInfoDTO.setQuestion(QuestionUtils.convert(getOrThrow(query.getQuestionId())));
 
         // todo 异步方式 mono.zip和feature
         // 题目选项

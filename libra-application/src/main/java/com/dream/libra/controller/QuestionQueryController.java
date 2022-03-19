@@ -1,6 +1,6 @@
 package com.dream.libra.controller;
 
-import com.dream.libra.api.question.QuestionApi;
+import com.dream.libra.api.question.QuestionQueryApi;
 import com.dream.libra.domain.question.service.QuestionCoreService;
 import com.dream.libra.dto.QuestionInfoDTO;
 import com.dream.libra.query.QuestionListQuery;
@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-public class QuestionController implements QuestionApi {
+public class QuestionQueryController implements QuestionQueryApi {
 
     @Autowired
     private QuestionCoreService questionCoreService;

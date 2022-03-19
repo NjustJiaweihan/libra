@@ -8,9 +8,9 @@ spring:
   datasource:
     name: masterDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.0.103:3306/libra
-    username: root
-    password: 12345
+    url: jdbc:mysql://47.100.94.213:3306/libra
+    username: libra_dba
+    password: Libra4#dba
   redis:
     database: 0
     host: 192.168.0.103
