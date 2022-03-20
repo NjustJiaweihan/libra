@@ -4,12 +4,50 @@
 
 看《重构》看得热血沸腾，找个老项目练练手。
 
+## How To Start
+
+### 环境
+推荐在docker中搭建基建。
+```
+# docker-mysql
+$ docker pull mysql
+$ docker run -itd --name mysql-test -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 mysql
+
+# docker-redis
+$ docker pull redis
+$ docker run -itd --name redis-test -p 6379:6379 redis
+
+# docker-elasticsearch
+$ docker pull elasticsearch:5.6.4
+```
+
+### 配置
+- 修改`application.yaml`
+```
+mybatis:
+  datasource:
+    url: jdbc:mysql://<your ip>:3306/libra
+
+redis:
+    host: <your ip>
+```
+- 启动项目，浏览器访问`http://localhost:8080/swagger-ui.html`
+
 ## 更新日志
 
 > 2022.02.12
 - LibraLog工具
 - QuestionQueryField写法
 
+> 2022.02.26
+- repo引入Null对象
+- 引入swagger
+
+> 2022.02.27
+- 题目策略模式
+
+> 2022.03.05
+- 引入libra-open模块
 
 ## Contribute
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):

@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  datasource:
+    name: masterDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.100.94.213:3306/libra
+    username: libra_dba
+    password: Libra4#dba
+  redis:
+    database: 0
+    host: 192.168.0.103
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 2
+    timeout: 6000
+
+
+mybatis:
+  mapper-locations: com.dream.libra.mapper/*.xml
+  configuration:
+      map-underscore-to-camel-case : true

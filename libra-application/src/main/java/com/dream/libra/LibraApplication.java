@@ -1,13 +1,12 @@
 package com.dream.libra;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * @author hanjiawei004@ke.com
- * @summary
- */
+
 @SpringBootApplication
+@MapperScan("com.dream.libra.dao")
 public class LibraApplication {
 
     public static void main(String[] args) {

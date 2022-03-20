@@ -11,11 +11,15 @@
 
     <artifactId>libra-domain</artifactId>
 
+    <properties>
+        <libra.open.verion>0.0.1-SNAPSHOT</libra.open.verion>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.dream</groupId>
             <artifactId>libra-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${libra.open.verion}</version>
         </dependency>
 
         <dependency>
@@ -28,11 +32,6 @@
             <groupId>com.dream</groupId>
             <artifactId>libra-infrastructure</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
