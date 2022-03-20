@@ -21,7 +21,7 @@ $ scp <local dir> root@47.100.94.213:/root/bin
 ```
 - 启动服务
 ```
-$ nohup java -jar ./bin/xxx.jar
+$ nohup java -jar ./bin/xxx.jar &
 ```
 - 查看java进程
 ```
