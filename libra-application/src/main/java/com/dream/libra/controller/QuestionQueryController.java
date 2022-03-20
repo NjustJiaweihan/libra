@@ -1,7 +1,7 @@
 package com.dream.libra.controller;
 
 import com.dream.libra.api.question.QuestionQueryApi;
-import com.dream.libra.domain.question.service.QuestionCoreService;
+import com.dream.libra.biz.QuestionBizService;
 import com.dream.libra.dto.QuestionInfoDTO;
 import com.dream.libra.query.QuestionListQuery;
 import com.dream.libra.query.QuestionQuery;
@@ -17,11 +17,11 @@ import java.util.List;
 public class QuestionQueryController implements QuestionQueryApi {
 
     @Autowired
-    private QuestionCoreService questionCoreService;
+    private QuestionBizService questionBizService;
 
     @Override
     public Response<QuestionInfoDTO> get(@RequestBody @Valid QuestionQuery query) {
-        return new Response<>(questionCoreService.get(query));
+        return new Response<>(questionBizService.query(query));
     }
 
     @Override

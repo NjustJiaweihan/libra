@@ -25,33 +25,13 @@ public class QuestionCoreService {
     private final LibraLog logger = LibraLog.getInstance(LoggerFactory.getLogger(QuestionCoreService.class));
 
     @Autowired
-    private QuestionRepo questionRepo;
-
-    @Autowired
-    private QuestionOptionRepo questionOptionRepo;
-
-    @Autowired
-    private QuestionRelationRepo questionRelationRepo;
+    private QuestionFactory questionFactory;
 
     @Autowired
     private List<AbstractQuestionService> questionHandlers;
 
-    public QuestionInfoDTO get(QuestionQuery query){
-        QuestionInfoDTO questionInfoDTO = new QuestionInfoDTO();
-        questionInfoDTO.setQuestion(QuestionUtils.convert(getOrThrow(query.getQuestionId())));
-
-        // todo 异步方式 mono.zip和feature
-        // 题目选项
-        if(Boolean.TRUE.equals(query.getFields().contains(QuestionQueryField.OPTION.fieldName))){
-            questionOptionRepo.get(query.getQuestionId());
-        }
-
-        // 题目属性
-        if(Boolean.TRUE.equals(query.getFields().contains(QuestionQueryField.PROPERTY.fieldName))){
-            questionRelationRepo.get(query.getQuestionId());
-        }
-
-        return questionInfoDTO;
+    public QuestionEntity get(Integer questionId, List<String> mods){
+        return questionFactory.get(questionId, mods.toArray(new String[0]));
     }
 
     public void validate(QuestionEntity question){
@@ -64,15 +44,5 @@ public class QuestionCoreService {
                 questionHandler.validate(question);
             }
         }
-    }
-
-    private Question getOrThrow(Integer questionId){
-        Question question = questionRepo.get(questionId);
-        if(Objects.isNull(question)){
-            logger.error("题目不存在 questionId:{}", questionId)
-                  .thenThrow(ErrorCode.QUESTION_NOT_EXIST.createException());
-        }
-
-        return question;
     }
 }
