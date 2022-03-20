@@ -23,3 +23,13 @@ $ scp <local dir> root@47.100.94.213:/root/bin
 ```
 $ nohup java -jar ./bin/xxx.jar
 ```
+
+## Oracle使用姿势
+- 登陆服务器
+```
+$ ssh opc@140.238.11.71 -i /Users/hanjiawei/.ssh/id_rsa_opc
+```
+- 发送文件至服务器(Mac)
+```
+scp -i /Users/hanjiawei/.ssh/id_rsa_opc /Users/hanjiawei/libra/libra-application/target/libra-application-0.0.1-SNAPSHOT.jar opc@140.238.11.71:~
+```
