@@ -23,7 +23,10 @@ $ scp <local dir> root@47.100.94.213:/root/bin
 ```
 $ nohup java -jar ./bin/xxx.jar
 ```
-
+- 查看java进程
+```
+$ ps -ef | grep java
+```
 ## Oracle使用姿势
 - 登陆服务器
 ```
